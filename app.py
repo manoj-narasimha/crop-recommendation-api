@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+import os
 
 # Load the trained model
 model_path = os.path.join(os.path.dirname(__file__), 'models', 'RandomForest.pkl')
