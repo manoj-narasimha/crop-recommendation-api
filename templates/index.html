@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Recommendation</title>
+  </head>
+  <body>
+    <h2>Crop Recommendation System</h2>
+    <form method="POST" action="/predict">
+      <div id="crop-fields">
+        <h3>Crop Recommendation</h3>
+        <label for="N">Nitrogen (N):</label>
+        <input type="number" name="N" required />
+        <br />
+        <label for="P">Phosphorus (P):</label>
+        <input type="number" name="P" required />
+        <br />
+        <label for="K">Potassium (K):</label>
+        <input type="number" name="K" required />
+        <br />
+        <label for="temperature">Temperature:</label>
+        <input type="number" name="temperature" required />
+        <br />
+        <label for="humidity">Humidity:</label>
+        <input type="number" name="humidity" required />
+        <br />
+        <label for="ph">Soil pH:</label>
+        <input type="number" name="ph" required />
+        <br />
+        <label for="rainfall">Rainfall:</label>
+        <input type="number" name="rainfall" required />
+        <br /><br />
+        <input type="submit" value="Predict" />
+      </div>
+    </form>
+
+    {% if prediction %}
+    <h3>Recommended Crop: {{ prediction }}</h3>
+    {% endif %}
+  </body>
+</html>
