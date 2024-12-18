@@ -3,7 +3,8 @@ import joblib
 import pandas as pd
 
 # Load the trained model
-crop_model = joblib.load(r'./models/RandomForest.pkl')
+model_path = os.path.join(os.path.dirname(__file__), 'models', 'RandomForest.pkl')
+crop_model = joblib.load(model_path)
 
 # Initialize Flask application
 app = Flask(__name__)
